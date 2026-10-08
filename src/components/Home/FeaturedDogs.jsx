@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const FeaturedDogs = () => {
   const [dogs, setDogs] = useState([]);
@@ -45,9 +46,11 @@ const FeaturedDogs = () => {
                 <p className="text-lg">
                   {dog.breed} - {dog.age}
                 </p>
+               <Link to={`/dog/${dog.id}`}>
                 <button className="text-white bg-purple-500 rounded-md w-full py-3 px-4">
                   View Profile
                 </button>
+                </Link>
               </div>
             </div>
           ))}
